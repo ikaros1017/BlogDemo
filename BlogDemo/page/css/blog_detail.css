@@ -1,0 +1,121 @@
+.blog{
+    background: rgba(255, 255, 255, .8);
+    width: 96%;
+    border-radius: 6px;
+    padding: 10px 15px;
+    box-shadow: 3px 4px 3px #888;
+    text-align: left;
+}
+
+.blog_title{
+    font-size: 24px;
+    font-weight: 600;
+    opacity: 1;
+}
+
+.blog_msg{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+    opacity: 1;
+
+}
+
+.blog_content{
+    padding: 0px 10px 20px 10px;
+    opacity: 1 !important;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.send_comment{
+    background: rgba(245, 245, 245, .8);
+    width: 96%;
+    border-radius: 6px;
+    padding: 10px 15px;
+    box-shadow: 3px 4px 3px #888;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.send_comment input{
+    width: 322px;
+    height: 34px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.send_comment textarea{
+    width: 90%;
+    height: 100px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.send_comment button{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.send_comment button:hover{
+    background: #adadad;
+}
+
+.vcode{
+    cursor: pointer;
+}
+.vcode svg{
+    transform: translate(10px, 10px);
+}
+
+.blog-comments{
+    width: 100%;
+    /* background: aqua; */
+}
+
+.blog-comments-msg{
+    margin-top: 20px;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+.blog-comment{
+    width: 95%;
+    background: rgba(217, 237, 247, .8);
+    border: 1px dashed #7ca4c1;
+    padding: 10px 15px 20px 15px;
+    margin-top: 10px;
+    color: #31708f;
+    text-align: left;
+}
+
+.blog-comment span{
+    display: inline-block;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.blog-comment div{
+    display: inline-block;
+    width: 100%;
+    padding-left: 10px; 
+    margin-top: 10px;
+}

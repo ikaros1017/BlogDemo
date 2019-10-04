@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人博客</title>
+    <link rel="stylesheet" href="./css/sitemap.css">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="./js/axios.js"></script>
+</head>
+<body>
+    <div class="title">个人博客のSiteMap</div>
+    <div class="link"><a href="/index.html"><b>博客首页</b> >> 站点地图</a></div>
+    <div class="blog-list" id="blog_list">
+        <span>最新文章</span>
+        <ul>
+            <li v-for="blog in blogList" :key="index"><a v-bind:href="blog.link">{{blog.title}}</a></li>
+        </ul>
+    </div>
+    <script src="./js/sitemap.js"></script>
+</body>
+</html>

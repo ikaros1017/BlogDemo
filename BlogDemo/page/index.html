@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人博客</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="./js/axios.js"></script>
+</head>
+<body id="body">
+    <header class="header">
+        <div class="container">
+            <a href="./index.html" class="title">我的个人博客丨技术博客</a>
+            <ul class="menu">
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./sitemap.html">地图</a></li>
+                <li><a href="./about.html">关于</a></li>
+                <li><a href="./guestbook.html">留言</a></li>
+                <li class="ikaros"><a href="./edit-blog.html">写博客</a></li>
+                <li class="ikaros"><a href="./edit-every-day.html">写每日</a></li>
+            </ul>
+            <div class="search-bar" id="search-bar">
+                <input type="text" placeholder="输入关键词查找" v-model="searchVal">
+                <button v-on:click="search()">搜索</button>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content-left">
+            <div class="everyday" id="every-day">
+                <span>每日一句</span>
+                <p v-html="getContent"></p>
+            </div>
+            <div class="article-list" id="article-list">
+                <div class="article" v-for="(article, index) in articleList">
+                    <a v-bind:href="article.link" class="article-title"  v-on:click="updataViews(index)">{{article.title}}</a>
+                    <p class="article-content">{{article.content}}</p>
+                    <div class="article-foot">发布于{{article.date}} 丨 浏览{{article.views}} 丨 Tags: {{article.tags}}</div>
+                </div>
+                <div class="page-tool">
+                    <ul>
+                        <li v-for="pageNum in pageNumList" v-on:click="jumpTo(pageNum.page)" v-bind:class="{now_page:(pageNum.text == page)}">{{pageNum.text}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="right-moodule" id="random-tags">
+                <div>随机标签云</div>
+                <a v-for="tag in tags" :key="index" v-bind:href="tag.link" v-bind:style="{color:randomColor(), fontSize:randomSize()}">{{tag.tags}}</a>
+            </div>
+            <div class="right-moodule" id="new-hot">
+                <div>最近热门</div>
+                <ul>
+                    <li v-for="(temp,index) in titleList" ><a v-on:click="updataViews(index)" v-bind:href="temp.link">{{temp.title}}</a></li>
+                </ul>   
+            </div>
+            <div class="right-moodule" id="new-comments">
+                <div>最新评论</div>
+                <ul>
+                    <li v-for="comment in commentList" :key="index">
+                        <div>
+                            <span>{{comment.user_name}}</span>
+                            <span class="pull-right">{{comment.ctime}}</span>
+                        </div>
+                        <p>{{comment.comments}}</p>
+                    </li>
+                </ul>   
+            </div>
+            <div class="right-moodule">
+                <div>友情链接</div>
+                <span><a target="_blank" href="#">MyGalgame</a></span>   
+                <span><a target="_blank" href="#">MyGalgame</a></span>   
+                <span><a target="_blank" href="#">MyGalgame</a></span>  
+                <span><a target="_blank" href="#">MyGalgame</a></span>  
+                <span><a target="_blank" href="#">MyGalgame</a></span>  
+                <span><a target="_blank" href="#">MyGalgame</a></span>  
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <ul>
+            <li>PHP</li>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>PHP</li>
+            <li>PHP</li>
+            <li>PHP</li>
+            <li>PHP</li>
+            <li>PHP</li>
+        </ul>
+        <p>------------版权归作者所有-----------</p>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="./js/base.js"></script>
+    <script>
+        var ikaros = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        var i = 0;
+        axios({
+            method: "get",
+            url: "/getimg"
+        }).then(function(resp){
+            document.getElementById("body").style.backgroundImage = "url(" + resp.data.location + ")";
+        });
+        document.onkeydown=function(e){
+            // console.log(e.keyCode);
+            if(e.keyCode == ikaros[i]){
+                i++;
+            }
+            if(i > 9){
+                document.getElementsByClassName("ikaros")[0].style.display = "inline-block";
+                document.getElementsByClassName("ikaros")[1].style.display = "inline-block";
+                document.getElementsByClassName("ikaros")[1].style.marginLeft = "6px";
+            }
+        };
+        
+    </script>
+</body>
+</html>

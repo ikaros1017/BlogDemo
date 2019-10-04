@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: "Myicon";
+    src: url("../font/glyphicons-halflings-regular.woff2")
+}
+
+body{
+    background-color: cornsilk;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1920px 1080px;
+    /* background-image: url(""); */
+    position: relative;
+    text-align: center; 
+    overflow-x: hidden;
+}
+
+.header{
+    width: 100%;
+    height: 50px;
+    /* opacity: .8; */
+    background: rgba(25, 24, 24, .8);
+}
+
+.container{
+    position: relative;
+    width: 1170px;
+    height: 50px;
+    margin: 0px  auto;
+    /* background: red; */
+}
+
+.title{
+    display: inline-block;
+    float: left;
+    color: #eee;
+    line-height: 50px;
+    text-decoration: none;
+    margin: 0px 5px;
+    font-size: 18px;
+}
+
+.menu{
+    /* background: aqua; */
+    float: left;
+
+}
+
+.menu > li{
+    display: inline-block;
+    float: left;
+    height: 50px;
+    width: 58px;
+    color: #eee;
+    font-size: 14px;
+    line-height: 50px;
+}
+
+.menu > li > a{
+    text-decoration: none;
+    color: white;
+}
+
+.search-bar > input{
+    display: inline-block;
+    position: absolute;
+    height: 22px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid;
+    font-size: 14px;
+    top: 50%;
+    margin-top: -18px;
+    right: 60px;
+}
+
+.search-bar > button{
+    display: inline-block;
+    position: absolute;
+    width: 54px;
+    height: 34px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    top: 50%;
+    margin-top: -18px;
+    outline: none;
+    color: #888;
+    right: 0;
+    background: white;
+}
+
+.content{
+    display: inline-block;
+    position: relative;
+    width: 1170px;
+    margin: 30px auto 0px auto;
+    /* background-color: rgba(255, 255, 255, .8); */
+    /* opacity: .8; */
+
+}
+
+.content-left{
+    float: left;
+    width: 66%;
+    padding: 0px 20px 0px 0px;
+    box-sizing: border-box;
+    /* background: red; */
+}
+
+.content-right{
+    float: right;
+    width: 34%;
+    padding: 0px 0px 0px 0px;
+}
+
+.right-moodule{
+    display: inline-block;
+    width: 100%;
+    background: rgba(31, 31, 31, .8);
+    color: white;
+    border-radius: 10px;
+    text-align: left;
+    padding: 0px 15px 25px 15px;
+    margin-bottom: 20px;
+}
+
+.right-moodule div{
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    padding: 15px 5px 15px 0px;
+    color: dodgerblue;
+}
+
+.right-moodule > a{
+    display: inline-block;
+    font-size: 14px;
+    color: dodgerblue;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.right-moodule > ul > li{
+    list-style: none;
+    color: white;
+    padding: 8px 0px;
+    border-bottom: 1px solid #292929;
+}
+
+.right-moodule >ul > li > a{
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+}
+.right-moodule >ul > li > a:hover{
+    color: aqua;
+}
+
+.right-moodule >ul > li > div{
+    padding: 5px 0px;
+}
+
+.right-moodule >ul > li > div > span{
+    font-size: 14px;
+    color: white;
+}
+
+.right-moodule >ul > li > p{
+    font-size: 14px;
+    color: #777;
+}
+
+.pull-right{
+    position: absolute;
+    right: 15px;
+}
+
+.right-moodule > span{
+    display: inline-block;
+    width: 49%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.right-moodule > span > a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.footer{
+    width: 100%;
+    height: 60px;
+    background: rgba(25, 24, 24, .8);
+    text-align: center;
+    padding: 20px;
+    opacity: .8;
+}
+
+.footer > ul{
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.footer > ul > li{
+    display: inline-block;
+    color: #a2a2a2;
+    float: left;
+    font-size: 14px;
+    margin-left: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.footer > p{
+    margin-top: 10px;
+    color: #a2a2a2;
+}
+
+.page-tool{
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.page-tool > ul > li{
+    display: inline-block;
+    list-style: none;
+    width: 40px;
+    height: 30px;
+    background: white;
+    line-height: 30px;
+    text-align: center;
+    border: 2px solid aqua;
+    float: left;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 10px;
+    /* font-weight: 400; */
+}
+
+.page-tool > ul > li:hover{
+    background: aqua;
+}
+
+.page-tool > ul > .now_page{
+    background: aqua;
+    color: #333333;
+}
+
+.header .menu .ikaros{
+    display: none;
+}
