@@ -105,15 +105,23 @@
         }).then(function(resp){
             document.getElementById("body").style.backgroundImage = "url(" + resp.data.location + ")";
         });
+        document.getElementsByClassName("ikaros")[1].style.marginLeft = "6px";
         document.onkeydown=function(e){
             // console.log(e.keyCode);
             if(e.keyCode == ikaros[i]){
                 i++;
             }
             if(i > 9){
-                document.getElementsByClassName("ikaros")[0].style.display = "inline-block";
-                document.getElementsByClassName("ikaros")[1].style.display = "inline-block";
-                document.getElementsByClassName("ikaros")[1].style.marginLeft = "6px";
+                window.scrollTo({top: "0",behavior: "smooth"});
+                setTimeout(function(){
+                    if(window.scrollY <= 100){
+                    // document.getElementsByClassName("ikaros")[0].style.display = "inline-block";
+                    // document.getElementsByClassName("ikaros")[1].style.display = "inline-block";
+                    document.getElementsByClassName("ikaros")[0].style.opacity = "1";
+                    document.getElementsByClassName("ikaros")[1].style.opacity = "1";
+                }
+                },500);
+                
             }
         };
         

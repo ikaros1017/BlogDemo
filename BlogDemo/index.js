@@ -50,6 +50,6 @@ app.get('/getimg', function(req, res){
     }); 
 });
 app.listen(globalConfig.port, function(){
-    console.log("sever opening");
+    console.log("sever opening"+ globalConfig.port);
 });
 
