@@ -5,7 +5,7 @@ function createConnection(){
         host: "192.168.0.112",
         port: "3306",
         user: "root",
-        password: "981017",
+        password: "****",
         database: "my_bolg"
     });
     return connection;
